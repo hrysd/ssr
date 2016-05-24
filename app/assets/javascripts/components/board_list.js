@@ -1,10 +1,12 @@
-var BoardList = React.createClass({
-  propTypes: {
-    boards: React.PropTypes.array.isRequired
-  },
+const React = require('react');
 
-  render: function() {
-    var boardNodes = this.props.boards.map(function(board) {
+class BoardList extends React.Component {
+  static propTypes = {
+    boards: React.PropTypes.array.isRequired
+  }
+
+  render() {
+    const boardNodes = this.props.boards.map((board) => {
       return (
         <tr>
           <td>{board.title}</td>
@@ -27,4 +29,6 @@ var BoardList = React.createClass({
       </table>
     );
   }
-});
+}
+
+module.exports = BoardList;
