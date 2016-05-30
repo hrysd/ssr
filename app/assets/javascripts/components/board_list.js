@@ -8,7 +8,8 @@ class BoardList extends React.Component {
   render() {
     const boardNodes = this.props.boards.map((board) => {
       return (
-        <tr>
+        <tr key={board.id}>
+          <td>{board.id}</td>
           <td>{board.title}</td>
         </tr>
       );
@@ -18,8 +19,8 @@ class BoardList extends React.Component {
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Title</th>
-            <th colSpan='3'></th>
           </tr>
         </thead>
 

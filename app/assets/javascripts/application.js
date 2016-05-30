@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require react_ujs
-//= require components
+//
 
-const global = require('global');
+const App = require('./globals');
 
-global.React    = require('react');
-global.ReactDOM = require('react-dom');
+require('./components')
+
+App.helloWorld = () => console.log('hello, world');

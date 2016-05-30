@@ -1,3 +1,3 @@
-const Ssr = global.Ssr = window.Ssr = {};
+const App = require('./globals');
 
-Ssr.BoardList = require('./components/board_list');
+App.BoardList = require('./components/board_list');
