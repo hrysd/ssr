@@ -1,18 +1,24 @@
-const React = require('react');
+const {Component} = require('react');
 
-class BoardList extends React.Component {
-  static propTypes = {
-    boards: React.PropTypes.array.isRequired
+class Board extends Component {
+  onClick = () => {
+    console.log(this, this.props.title);
   }
 
   render() {
+    return (
+      <tr onClick={this.onClick}>
+        <td>{this.props.id}</td>
+        <td>{this.props.title}</td>
+      </tr>
+    );
+  }
+}
+
+class BoardList extends Component {
+  render() {
     const boardNodes = this.props.boards.map((board) => {
-      return (
-        <tr key={board.id}>
-          <td>{board.id}</td>
-          <td>{board.title}</td>
-        </tr>
-      );
+      return <Board {...board} key={board.id} />;
     });
 
     return (
